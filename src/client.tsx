@@ -1,6 +1,5 @@
-import App from './App';
+import App from './client/App';
 import { BrowserRouter } from 'react-router-dom';
-// @ts-ignore
 import React from 'react';
 import { hydrate } from 'react-dom';
 

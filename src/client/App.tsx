@@ -1,7 +1,6 @@
-// @ts-ignore
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
+import Home from './container/home/Home';
 import './App.css';
 
 const App = () => (

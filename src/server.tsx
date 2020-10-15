@@ -1,17 +1,21 @@
-// @ts-ignore
 import React from 'react';
-// @ts-ignore
 import express from 'express';
-import App from './App';
+import App from './client/App';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 
-const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+let assets: any;
+
+const syncLoadAssets = () => {
+    assets = require(process.env.RAZZLE_ASSETS_MANIFEST!);
+};
+syncLoadAssets();
+
 
 const server = express();
 server
   .disable('x-powered-by')
-  .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .use(express.static(process.env.RAZZLE_PUBLIC_DIR!))
   .get('/*', (req, res) => {
     const context: any = {};
     const markup = renderToString(

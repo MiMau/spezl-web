@@ -1,7 +1,5 @@
 import App from './App';
-// @ts-ignore
 import React from 'react';
-// @ts-ignore
 import ReactDOM from 'react-dom';
 import { MemoryRouter } from 'react-router-dom';
 

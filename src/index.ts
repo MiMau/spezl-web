@@ -1,4 +1,3 @@
-// @ts-ignore
 import express from 'express';
 
 let app = require('./server').default;
@@ -19,7 +18,7 @@ const port = process.env.PORT || 3000;
 
 export default express()
   .use((req, res) => app.handle(req, res))
-  .listen(port, function(err) {
+  .listen(port, (err?: Error) => {
     if (err) {
       console.error(err);
       return;
