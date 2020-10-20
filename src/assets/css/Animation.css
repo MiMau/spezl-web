@@ -1,0 +1,41 @@
+:root {
+    --animate-delay: 0.5s;
+    --animate-duration: 2s;
+}
+
+
+.link-event {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.link-event:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.link-event:hover:after{
+    width: 100%;
+    left: 0;
+    background: #fff;
+}
+
+
+.button-event {
+    background: transparent;
+    transition: width 0.3s ease 0s;
+}
+
+.button-event:hover {
+    background-color: white;
+    color: black;
+}

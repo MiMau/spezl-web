@@ -1,0 +1,198 @@
+:root {
+    --scroll: 0;
+    --size: 20px;
+}
+
+
+@keyframes fixed-to-absolute {
+    0% {
+        position: fixed;
+    }
+    99% {
+        position: fixed;
+    }
+    100% {
+        position: absolute;
+    }
+}
+
+@keyframes op {
+    0% {
+        opacity: 0%;
+    }
+    10% {
+        opacity: 0%;
+    }
+    60% {
+        opacity: 100%;
+    }
+
+}
+
+@keyframes scroll-helper {
+    0% {
+        bottom: 5%;
+    }
+    5% {
+        bottom: 6%;
+    }
+    10% {
+        bottom: 5%;
+    }
+    15% {
+        bottom: 6%;
+    }
+    20% {
+        bottom: 5%;
+    }
+    25% {
+        bottom: 6%;
+    }
+    30% {
+        bottom: 5%;
+    }
+}
+
+@keyframes sun-rise {
+    0% {
+        position: fixed;
+        top: 80%;
+    }
+    99 %{
+        position: fixed;
+    }
+    100% {
+        position: absolute;
+        top: 20%;
+    }
+}
+
+
+@keyframes sun-rise-shadow {
+    from {
+        filter: drop-shadow(0px -10px 11px #031E53);
+    }
+    to {
+        filter: drop-shadow(0px -10px 11px #FFEBA5);
+    }
+}
+
+.sun-rise-shadow {
+    animation: sun-rise-shadow 1s none;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+.fixed-to-absolute {
+    position: fixed;
+    animation: fixed-to-absolute 1s linear;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+.hero-container {
+    padding: 0;
+    margin: 0;
+    height: 500vh;
+
+    position: relative;
+
+    background: linear-gradient(180deg, var(--primary-color) 14.06%, var(--tertiary-color) 100%);
+
+}
+
+.background-wrap {
+    height: 100vh;
+    bottom:0;
+    left: 0;
+    right: 0;
+}
+
+.background-img {
+    background-image: url("../images/pexels-azorky-1132009.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.hero-scroll {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    bottom: 5%;
+    opacity: 60%;
+
+    animation: scroll-helper 10s linear 10s infinite alternate;
+}
+.hero-scroll > svg {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.sun {
+    position: fixed;
+    left: 60%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background: #FFEE56;
+    box-shadow: 0px 0px 120px 100px rgba(255, 238, 86, 0.52);
+    filter: blur(7px);
+
+    animation: sun-rise 1s none;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+
+.products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+
+    animation: op 1s none;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    padding-bottom: 20%;
+}
+
+
+.products > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.products > div > svg {
+    font-size: 80px;
+}

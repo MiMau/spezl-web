@@ -1,0 +1,42 @@
+.menu {
+  position: fixed;
+  height: 60px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 9001;
+}
+
+.menu > div {
+  display: flex;
+  justify-content: center;
+}
+
+.menu > div > span {
+  font-size: 32px;
+  font-style: italic;
+  font-weight: bold;
+  width: max-content;
+}
+
+.menu > .menu-link-bar {
+  flex-direction: row;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.menu-link-bar > a {
+  margin: 0px 10px;
+  padding: 5px 10px;
+  color: white;
+}
+
+.menu-link-bar > .menu-link-button {
+  border: 2px solid white;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
