@@ -15,6 +15,134 @@
 
 .card {
   padding-top: 2em;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
   padding-bottom: 1.5em;
+}
+
+.card-body {
+  width: 80%;
+}
+
+
+.web-card {
+  display: grid;
+}
+
+.web-image {
+  grid-area: Image;
+  background: url("../images/pexels-oleg-magni-2764666.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.web-plan {
+  background-color: rgba(255,255,255,0.2);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.web-plan > p {
+  flex: 1
+}
+
+.web-tools {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content:center;
+  margin-bottom: 10px;
+}
+
+.web-tools > svg {
+  margin: 5px;
+}
+
+.web-plan-a {
+  grid-area: PlanA;
+
+}
+
+.web-plan-b {
+  grid-area: PlanB;
+}
+
+.web-plan-c {
+  grid-area: PlanC;
+}
+
+.web-plan-d {
+  grid-area: PlanD;
+}
+
+.kunde-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px
+}
+
+.kunde-row > img {
+  margin: 0px 10px;
+  height: 100%;
+  width: 200px;
+}
+
+.gaming {
+  display: grid;
+}
+
+.gaming-title {
+  grid-area: Title;
+  text-align: left;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.gaming-img-a {
+  grid-area: ImageA;
+  content: "";
+  background: url("../images/pexels-lucie-liz-3165335.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.gaming-text-a {
+  grid-area: TextA;
+  color: rgba(255, 255, 255, 0.6);
+}
+.gaming-img-b {
+  grid-area: ImageB;
+  background: url("../images/pexels-soumil-kumar-735911.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.gaming-text-b {
+  grid-area: TextB;
+  color: rgba(255, 255, 255, 0.6);
+}
+.gaming-img-c {
+  grid-area: ImageC;
+  background: url("../images/pexels-athena-2582928.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.gaming-text-c {
+  grid-area: TextC;
+  font-weight: 900;
+  font-size: 70px;
+  line-height: 82px;
+
+  color: rgba(255, 255, 255, 0.2);
+
 }
 
