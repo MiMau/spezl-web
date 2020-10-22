@@ -14,12 +14,12 @@
 
 
 .card {
-  padding-top: 2em;
+  padding-top: 3.5em;
   display: flex;
 
   justify-content: center;
   align-items: center;
-  padding-bottom: 1.5em;
+  padding-bottom: 4.5em;
 }
 
 .card-body {

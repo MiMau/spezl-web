@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from "./hero";
+import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCss3, faHtml5, faJs, faReact} from "@fortawesome/free-brands-svg-icons";
 // @ts-ignore
@@ -68,6 +69,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <NavLink to="/web" className="menu-link-button button-event">Mehr Informationen</NavLink>
                     </div>
                 </div>
                 <div className="card primary">

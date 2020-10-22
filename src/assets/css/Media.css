@@ -1,14 +1,11 @@
 @media only screen and (max-width: 800px) {
-    .menu {
-        width: 100%;
-        justify-content: space-around;
-    }
-    .menu > .menu-link-bar > a {
+    .menu-bar > .menu-link-bar > a {
         display: none;
     }
 
     .products {
         width: 100%;
+        max-width: 440px;
     }
 
     .products > div > svg{
@@ -17,8 +14,8 @@
     .web-card {
         grid-template-columns: 100%;
         grid-template-rows: auto;
+        gap: 2.5% 2.5%;
         grid-template-areas:
-                "Image"
                 "PlanA"
                 "PlanB"
                 "PlanC"
@@ -37,15 +34,11 @@
 }
 
 @media only screen and (min-width: 801px) {
-    .menu {
-        width: 80%;
-        max-width: 2000px;
-        justify-content: space-between;
-    }
-    .menu > .menu-link-bar > div {
+
+    .menu-bar > .menu-link-bar > div {
         display: none;
     }
-    .menu > .menu-burger  {
+    .menu-bar > .hamburger  {
         display: none;
     }
 
@@ -56,7 +49,7 @@
     .web-card {
         grid-template-columns: 25% 35% 35%;
         grid-template-rows: auto;
-        gap: 5px 10px;
+        gap: 2.5% 2.5%;
         grid-template-areas:
                 "Image PlanA PlanB"
                 "Image . ."
