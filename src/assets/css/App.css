@@ -7,22 +7,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: var(--primary-color);
+
   align-items: center;
 }
 
-.menu-bar > div {
+.menu-title {
   display: flex;
   justify-content: center;
-  width: 100%;
-}
-
-.menu-bar > div > span {
   font-size: 32px;
   font-style: italic;
   font-weight: bold;
   width: max-content;
+  padding-left: 20px;
 }
+
 
 .menu-bar > .menu-link-bar {
   display: flex;
@@ -32,7 +30,13 @@
   text-align: center;
 }
 
+.menu-link-bar > a {
+  margin: 0 0.8em;
+}
+
 .menu-link-button {
+  display: block;
+  width: max-content;
   border: 2px solid white;
   border-radius: 40px;
   text-decoration: none;

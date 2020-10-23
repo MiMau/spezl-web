@@ -15,12 +15,10 @@ const Menu = ({children}: any) => {
 
     return (
         <>
-            <div className="menu-bar">
-                <div>
-                <span>
+            <div className="menu menu-bar">
+                <span className="menu-title">
                     SPEZL-IT
                 </span>
-                </div>
                 <div className="menu-link-bar">
                     {children}
                 </div>

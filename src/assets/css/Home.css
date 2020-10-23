@@ -16,6 +16,7 @@
 .card {
   padding-top: 3.5em;
   display: flex;
+  flex-direction: column;
 
   justify-content: center;
   align-items: center;
@@ -24,11 +25,14 @@
 
 .card-body {
   width: 80%;
+  max-width: 1200px;
 }
 
 
 .web-card {
   display: grid;
+  margin: 20px 0;
+  width: 100%;
 }
 
 .web-image {
@@ -116,6 +120,9 @@
 }
 .gaming-text-a {
   grid-area: TextA;
+  text-align: right;
+  height: 100%;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.6);
 }
 .gaming-img-b {
@@ -127,6 +134,9 @@
 }
 .gaming-text-b {
   grid-area: TextB;
+  text-align: left;
+  height: 100%;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.6);
 }
 .gaming-img-c {
@@ -139,7 +149,7 @@
 .gaming-text-c {
   grid-area: TextC;
   font-weight: 900;
-  font-size: 70px;
+  font-size: 60px;
   line-height: 82px;
 
   color: rgba(255, 255, 255, 0.2);

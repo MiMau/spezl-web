@@ -111,6 +111,19 @@
 
 }
 
+.hero-no-scroll-container {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+
+    position: relative;
+    background-color: var(--tertiary-color) ;
+}
+
+.absolute {
+    position: absolute;
+}
+
 .background-wrap {
     height: 100vh;
     bottom:0;
@@ -171,6 +184,8 @@
 .products {
     width: 100%;
     display: grid;
+    position: absolute;
+    bottom: 20%;
     grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
 
     animation: op 1s none;
@@ -181,7 +196,6 @@
     /* These last 2 properites clean up overshoot weirdness */
     animation-iteration-count: 1;
     animation-fill-mode: both;
-    padding-bottom: 20%;
 }
 
 
@@ -195,4 +209,32 @@
 
 .products > div > svg {
     font-size: 80px;
+}
+
+
+.menu {
+    animation: background 1s none;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes background {
+    from {
+        background-color: transparent;
+        top: 20px;
+        width: 90%;
+    }
+    60%{
+        background-color: transparent;
+        top: 0;
+        width: 100%;
+    }
+    to {
+        background-color: var(--primary-color);
+    }
 }

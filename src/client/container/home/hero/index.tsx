@@ -13,6 +13,9 @@ const Hero = () => {
         if (container) {
             const scroll = (window.pageYOffset / (container.offsetHeight - window.innerHeight))
             document.body.style.setProperty('--scroll', `${scroll}`);
+            // if(scroll >= 1) {
+            //     window.removeEventListener('scroll', listener)
+            // }
         }
     }
 

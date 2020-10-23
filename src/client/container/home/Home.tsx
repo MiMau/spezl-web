@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from "./hero";
 import {NavLink} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCss3, faHtml5, faJs, faReact} from "@fortawesome/free-brands-svg-icons";
 // @ts-ignore
 import Steinberger from "../../../assets/images/steinberger.png"
@@ -84,9 +84,15 @@ class Home extends React.Component {
                     <div className="card-body gaming">
                         <span className="gaming-title">Be Prepared for your next Session</span>
                         <div className="gaming-img-a"></div>
-                        <p className="gaming-text-a">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                        <span className="gaming-text-a">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                            vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                            takimata sanctus est Lorem ipsum dolor sit amet. </span>
                         <div className="gaming-img-b"></div>
-                        <p className="gaming-text-b">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                        <span className="gaming-text-b">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                            vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                            takimata sanctus est Lorem ipsum dolor sit amet. </span>
                         <div className="gaming-img-c"></div>
                         <span className="gaming-text-c">GG WP</span>
                     </div>
