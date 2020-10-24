@@ -1,0 +1,9 @@
+services:
+
+  webapp:
+    container_name: Spezl-Web
+    build:
+      context: .
+      dockerfile: dockerfile_windows.yml
+    ports:
+      - 8080:3000
