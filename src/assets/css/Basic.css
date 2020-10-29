@@ -18,15 +18,18 @@ body {
     height: 100%;
     width: 100%;
 
-
     color: var(--secondary-color);
 
+}
+
 /* Hide scrollbar for IE, Edge and Firefox */
+* {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
 /* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     display: none;
 }
 

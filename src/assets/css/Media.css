@@ -1,6 +1,13 @@
 @media only screen and (max-width: 800px) {
-    .menu-bar > .menu-link-bar > a {
+    .menu-bar > .menu-link-bar > a  {
         display: none;
+    }
+    .menu-bar > .menu-link-bar > button  {
+        display: none;
+    }
+    .kontakt-background{
+        width: 100%;
+        right: -100%;
     }
 
     .products {
@@ -34,6 +41,10 @@
 }
 
 @media only screen and (min-width: 801px) {
+    .kontakt-background{
+        width: 40%;
+        right: -40%;
+    }
 
     .menu-bar > .menu-link-bar > div {
         display: none;

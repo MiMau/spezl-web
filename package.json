@@ -17,8 +17,8 @@
     "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "razzle": "^3.3.5",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "razzle": "^3.3.5"
   },
   "devDependencies": {
     "@types/react-fontawesome": "^1.6.4",

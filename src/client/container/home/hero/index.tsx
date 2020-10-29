@@ -1,6 +1,13 @@
 import React, {useEffect, useState} from "react"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCoffee,faLaptopCode, faGamepad,faLaptopHouse, faUserSecret, faMouse} from '@fortawesome/free-solid-svg-icons'
+import {
+    faCoffee,
+    faLaptopCode,
+    faGamepad,
+    faLaptopHouse,
+    faUserSecret,
+    faMouse
+} from '@fortawesome/free-solid-svg-icons'
 
 interface IHero {
     scrollElement?: string
@@ -8,36 +15,43 @@ interface IHero {
 
 const Hero = () => {
     const [container, setContainer] = useState<HTMLElement | undefined>(undefined)
+    const [cage, setCage] = useState<HTMLElement | undefined>(undefined)
 
     function listener(): any {
-        if (container) {
-            const scroll = (window.pageYOffset / (container.offsetHeight - window.innerHeight))
+        if (container && cage) {
+            const scroll = (cage.scrollTop / (container.offsetHeight - cage.offsetHeight))
             document.body.style.setProperty('--scroll', `${scroll}`);
-            // if(scroll >= 1) {
-            //     window.removeEventListener('scroll', listener)
-            // }
+            if (scroll >= 1) {
+                cage.removeEventListener('scroll', listener)
+            }
         }
     }
 
     useEffect(() => {
+        document.body.style.setProperty('--scroll', '0');
         const element = document.getElementById("hero-container")
-        if (element) {
+        const cage = document.getElementById("hero-cage")
+        if (element && cage) {
+            setCage(cage)
             setContainer(element)
+
+            cage.addEventListener('scroll', listener, false)
         }
-        window.addEventListener('scroll', listener, false)
 
 
         return () => {
-            if (container) {
-                window.removeEventListener('scroll', listener)
+            if (container && cage) {
+                document.body.style.setProperty('--scroll', '1');
+                cage.removeEventListener('scroll', listener)
             }
         }
     })
 
     return (
 
-        <div id="hero-container" className="hero-container">
-            <div className="background-wrap fixed-to-absolute">
+        <div id="hero-cage">
+            <div id="hero-container"></div>
+            <div className="background-wrap">
                 <div className="sun"></div>
                 <div className="background-img sun-rise-shadow">
                     <div className="products">
@@ -65,8 +79,6 @@ const Hero = () => {
                 </div>
             </div>
         </div>
-
-
     )
 }
 

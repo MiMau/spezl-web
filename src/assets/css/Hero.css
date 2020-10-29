@@ -2,17 +2,22 @@
     --scroll: 0;
     --size: 20px;
 }
-
-
-@keyframes fixed-to-absolute {
-    0% {
-        position: fixed;
+@keyframes background-container {
+    from {
+        height: 500vh;
+        background-color: black;
+    }
+    60% {
+        height: 500vh;
+        background-color: skyblue;
     }
     99% {
-        position: fixed;
+        height: 500vh;
+        background-color: skyblue;
     }
-    100% {
-        position: absolute;
+    to {
+        height: 100vh;
+        background-color: skyblue;
     }
 }
 
@@ -55,27 +60,42 @@
 
 @keyframes sun-rise {
     0% {
-        position: fixed;
-        top: 80%;
-    }
-    99 %{
-        position: fixed;
+        bottom: 20%;
     }
     100% {
-        position: absolute;
-        top: 20%;
+        bottom: 80%;
     }
 }
 
 
 @keyframes sun-rise-shadow {
     from {
-        filter: drop-shadow(0px -10px 11px #031E53);
+        filter: grayscale(60%) sepia(0%);
+    }
+    30% {
+        filter: grayscale(0%) sepia(20%);
+    }
+    40% {
+        filter: sepia(20%);
+    }
+    70% {
+        filter: sepia(0%);
     }
     to {
-        filter: drop-shadow(0px -10px 11px #FFEBA5);
+
     }
 }
+
+
+@keyframes hide-overflow {
+    99% {
+        overflow-y: scroll;
+    }
+    100% {
+        overflow-y: hidden;
+    }
+}
+
 
 .sun-rise-shadow {
     animation: sun-rise-shadow 1s none;
@@ -88,9 +108,37 @@
     animation-fill-mode: both;
 }
 
-.fixed-to-absolute {
-    position: fixed;
-    animation: fixed-to-absolute 1s linear;
+
+#hero-container {
+    height: 500vh;
+    padding: 0;
+    margin: 0;
+
+    animation:  background-container 1s linear;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+}
+
+.absolute {
+    position: absolute;
+}
+
+#hero-cage {
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    background-color: skyblue;
+
+    animation:  hide-overflow 1s linear;
     /* Pause the animation */
     animation-play-state: paused;
     /* Bind the animation to scroll */
@@ -100,38 +148,14 @@
     animation-fill-mode: both;
 }
 
-.hero-container {
-    padding: 0;
-    margin: 0;
-    height: 500vh;
-
-    position: relative;
-
-    background: linear-gradient(180deg, var(--primary-color) 14.06%, var(--tertiary-color) 100%);
-
-}
-
-.hero-no-scroll-container {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-
-    position: relative;
-    background-color: var(--tertiary-color) ;
-}
-
-.absolute {
-    position: absolute;
-}
-
 .background-wrap {
-    height: 100vh;
-    bottom:0;
-    left: 0;
-    right: 0;
+    position: sticky;
+    bottom: 0;
+    height: 0px;
 }
 
 .background-img {
+    position: absolute;
     background-image: url("../images/pexels-azorky-1132009.png");
     background-position: center;
     background-size: cover;
@@ -141,6 +165,7 @@
     align-items: center;
     height: 100vh;
     width: 100%;
+    bottom: 0;
 }
 
 
@@ -161,14 +186,23 @@
 }
 
 .sun {
-    position: fixed;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    bottom: 0;
+}
+
+.sun::before {
+    content: "";
+    position: absolute;
     left: 60%;
     height: 100px;
     width: 100px;
     border-radius: 50px;
+    filter: blur(7px);
+
     background: #FFEE56;
     box-shadow: 0px 0px 120px 100px rgba(255, 238, 86, 0.52);
-    filter: blur(7px);
 
     animation: sun-rise 1s none;
     /* Pause the animation */
@@ -179,7 +213,6 @@
     animation-iteration-count: 1;
     animation-fill-mode: both;
 }
-
 
 .products {
     width: 100%;
